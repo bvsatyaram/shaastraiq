@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  skip_before_filter :user_can_manage_quiz?
+  skip_before_filter :logged_in?, :user_can_manage_quiz?
   
   def new
     @user_session = UserSession.new

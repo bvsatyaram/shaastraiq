@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :fetch_quiz
+  before_filter :fetch_quiz, :can_manage_quizzes?
 
   # GET /questions
   # GET /questions.xml
@@ -92,5 +92,9 @@ class QuestionsController < ApplicationController
 
   def fetch_quiz
     @quiz = Quiz.find(params[:quiz_id])
+  end
+
+  def can_manage_quizzes?
+    # Check its
   end
 end

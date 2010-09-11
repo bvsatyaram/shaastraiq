@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   # Home Page
-  map.root :controller => 'user_sessions', :action => 'new'
+  map.root :controller => 'quizzes', :action => 'take'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
