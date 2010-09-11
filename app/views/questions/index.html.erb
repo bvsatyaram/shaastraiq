@@ -1,0 +1,28 @@
+<h1>Listing questions</h1>
+
+<table class="questions_listing">
+  <% for question in @questions %>
+    <tr class ="question_preview">
+      <td><%=h question.content %></td>
+  <%#*<td>%>
+  <%#= link_to 'Show', question %>
+  <%#*</td>%>
+      <td>
+        Answers:
+        <% question.answers.each do |answer| %>
+          <% if answer.correct? %>
+            <%= content_tag 'span', answer.content, :class => 'answer correct'  %>
+          <% else %>
+            <%= content_tag 'span', answer.content, :class => 'answer'   %>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= link_to 'Edit', edit_quiz_question_path(@quiz, question) %></td>
+      <td><%= link_to 'Destroy', [@quiz, question], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New question', new_quiz_question_path(@quiz) %>

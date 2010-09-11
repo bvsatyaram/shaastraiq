@@ -1,0 +1,19 @@
+<%#= f.error_messages %>
+
+<p>
+  <%= f.label :content %><br />
+  <%= f.text_area :content %>
+</p>
+
+<% @question.answers.each do |answer| %>
+  <% fields_for "question[answer_attributes][]", answer, :index => nil do |answer_form| %>
+    <p>
+      <%= answer_form.label :answer %>:
+      <%= answer_form.text_field :content %>
+      <%= answer_form.radio_button :correct, true, :index => nil %>
+      <% unless answer.new_record? %>
+        <%= answer_form.hidden_field :id, :index => nil %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>

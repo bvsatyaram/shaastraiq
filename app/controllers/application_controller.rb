@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   helper_method :current_user
+  before_filter :user_can_manage_quiz?
 
   private
   def current_user_session
@@ -17,5 +18,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user = current_user_session && current_user_session.record
-  end  
+  end
+
+  def user_can_manage_quiz?
+    manageable_users = ["bvsatyaram"]
+    unless current_user && manageable_users.include?(current_user.username)
+      redirect_to login_path
+    end
+  end
 end

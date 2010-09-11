@@ -1,0 +1,13 @@
+<h1>Editing question</h1>
+
+<% form_for [@quiz, @question] do |f| %>
+  <%= render :partial => 'questions/fields', :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%#= link_to 'Show', @question %>
+  <%#*|%>
+<%= link_to 'Back', quiz_questions_path(@quiz) %>

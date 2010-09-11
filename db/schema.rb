@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100911140032) do
+ActiveRecord::Schema.define(:version => 20100911144241) do
+
+  create_table "answers", :force => true do |t|
+    t.string  "content"
+    t.boolean "correct",     :default => false
+    t.integer "question_id"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.text    "content"
+    t.integer "quiz_id"
+  end
+
+  create_table "quizzes", :force => true do |t|
+    t.string "title"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"
