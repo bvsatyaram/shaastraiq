@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_filter :fetch_quiz, :can_manage_quizzes?
+  uses_tiny_mce
 
   # GET /questions
   # GET /questions.xml
