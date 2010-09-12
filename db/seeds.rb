@@ -42,7 +42,7 @@ say_seeding(User.name)
 
 registered_users = File.new(RAILS_ROOT + "/db/passwords.txt", "r")
 while (line = registered_users.gets)
-  user_data = line.split(",")
+  user_data = line.strip.split(",")
   user_count = User.count
   User.find_or_create_by_username(
     :username => user_data[0],
