@@ -26,20 +26,43 @@ end
 
 # +User+
 say_seeding(User.name)
-users_data = [
-  {:username => "bvsatyaram", :password => "i<3Angel"},
-  {:username => "towel", :password => "whynOt"},
-  {:username => "pratul", :password => "Askme"},
-  {:username => "iqvol", :password => "rockstAr"}
-]
-users_data.each do |data|
+#users_data = [
+#  {:username => "bvsatyaram", :password => "monkey"},
+#  {:username => "iqcoord", :password => "whynOt"},
+#  {:username => "iqvol", :password => "rockstAr"}
+#]
+#users_data.each do |data|
+#  User.find_or_create_by_username(
+#    :username => data[:username],
+#    :password => data[:password],
+#    :password_confirmation => data[:password]
+#  )
+#  dot
+#end
+
+registered_users = File.new(RAILS_ROOT + "/db/passwords.txt", "r")
+while (line = registered_users.gets)
+  user_data = line.split(",")
+  user_count = User.count
   User.find_or_create_by_username(
-    :username => data[:username],
-    :password => data[:password],
-    :password_confirmation => data[:password]
+    :username => user_data[0],
+    :password => user_data[1],
+    :password_confirmation => user_data[1]
   )
-  dot
+  if user_count == User.count && !User.find_by_username(user_data[0])
+    puts "\nInvalid user: #{user_data[0]}\n"
+    user = User.new(
+      :username => user_data[0],
+      :password => user_data[1],
+      :password_confirmation => user_data[1]
+    )
+    user.save(false)
+    puts "Created user: #{user_data[0]} without validations\n"
+  else
+    dot
+  end
 end
+registered_users.close
 
 # Done
 newline
