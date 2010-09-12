@@ -1,0 +1,201 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #dee8f0;
+    color: #333;
+}
+
+body, p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+    padding: 2px;
+    background-color: red;
+    display: inline;
+}
+
+#errorExplanation {
+    width: 400px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 12px;
+    margin: 0 auto 20px;
+    background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+#errorExplanation ul li {
+    font-size: 12px;
+    list-style: square;
+}
+
+table.questions_listing tr.question_preview span.answer {
+    padding-left: 5px;
+}
+
+table.questions_listing tr.question_preview span.correct {
+    color: green;
+}
+
+input.button, a.button {
+    background-color: #445566;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-decoration: none;
+}
+
+#container {
+    margin: -15px 0 0 0;
+    padding: 0px;
+    width: 100%;
+}
+
+#header {
+    margin: 0;
+    padding: 15px 0 0 0;
+    height: 170px;
+    background-color: #000307;
+    width: 100%;
+}
+
+#header .inner_content {
+    width: 950px;
+    margin: 0 auto;
+}
+
+#header .inner_content img.shaastra_logo {
+    float: left;
+}
+
+#header .inner_content img.iq_logo {
+    float: left;
+    margin: 5px 25px;
+}
+
+#header .inner_content .account {
+    float: right;
+}
+
+#header .inner_content .account a, #header .inner_content .account a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#header .inner_content .account a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+#content {
+    margin: -60px auto 0;
+    width:  950px;
+    background-color: #FFFFFF;
+    padding: 20px 10px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    min-height: 300px;
+}
+
+#content p.flash_msg {
+    color: green;
+    text-align: center;
+}
+
+form#new_user_session {
+    margin-top: 40px;
+}
+
+form#new_user_session label {
+    width: 300px;
+    float: left;
+    text-align: right;
+    color: #333333;
+    font-weight: bold;
+    font-size: 1.2em;
+    clear: both;
+}
+
+form#new_user_session input {
+    margin-left : 20px;
+    margin-bottom: 10px;
+    float: left;
+    width: 300px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: gray;
+}
+
+form#new_user_session input#user_session_submit {
+    clear: both;
+    margin: 15px 0 0 320px;;
+    width: auto;
+    color: #FFFFFF;
+}
+
+#footer {
+    clear: both;
+}
+
+a#take_quiz_link {
+    margin-left: 25px;
+}
+
+input#quiz_submit {
+    margin-left: 25px;
+}
+
+form#take_test_form ol, form#take_test_form ol li ul {
+    list-style-type: none
+}
+
+form#take_test_form ol li hr {
+    border: 1px solid #EEEEEE;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+#iqscore {
+    margin-top: 100px;
+    color: #000307;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+#iqscore .score {
+    color: #FF790D;
+    font-size: 2em;
+    margin-top:30px;
+}
