@@ -2,11 +2,11 @@
 <h1>Take the quiz</h1>
 <% form_for @quiz, :url => {:controller => "quizzes", :action => "score"} do |f| %>
 <ol>
-  <% @quiz.questions.each do |question| %>
+  <% @quiz.questions.sort_by{rand}.each do |question| %>
   <li>
     <%= question.content %>
     <ul>
-      <% question.answers.each do |answer| %>
+      <% question.answers.sort_by{rand}.each do |answer| %>
         <li><%= radio_button_tag "question[#{question.id}]", answer.id, false %> <%= answer.content %></li>
       <% end %>
         <li><%= radio_button_tag "question[#{question.id}]", 0, true %> I prefer not to answer this</li>
