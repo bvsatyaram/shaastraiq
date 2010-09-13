@@ -1,1 +1,21 @@
-<p>Please wait till the quiz starts</p>
+<h1>Take the quiz</h1>
+<% form_for @quiz, :url => {:controller => "quizzes", :action => "score"}, :html => {:id => "take_test_form"} do |f| %>
+  <ol>
+    <% @quiz.questions.sort_by{rand}.each do |question| %>
+      <li>
+        <%= question.content %>
+        <ul>
+          <% question.answers.sort_by{rand}.each do |answer| %>
+            <li><%= radio_button_tag "question[#{question.id}]", answer.id, false %> <%= answer.content %></li>
+          <% end %>
+          <li><%= radio_button_tag "question[#{question.id}]", 0, true %> I prefer not to answer this</li>
+        </ul>
+        <hr />
+      </li>
+    <% end %>
+  </ol>
+  <%= hidden_field_tag :quiz_id, @quiz.id %>
+  <p>
+    <%= f.submit "Submit", :class => "button" %>
+  </p>
+<% end %>

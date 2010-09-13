@@ -18,7 +18,7 @@ class QuizzesController < ApplicationController
 
   def take
     current_user.update_attribute(:start_time, Time.now)
-    @quiz = Quiz.all.rand
+    @quiz = Quiz.all(:conditions => {:id => [1,3,4]}).rand
   end
 
   def score
