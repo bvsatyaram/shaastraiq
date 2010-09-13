@@ -5,7 +5,7 @@
       <li>
         <%= question.content %>
         <ul>
-          <% question.answers.sort_by{rand}.each do |answer| %>
+          <% question.answers.each do |answer| %>
             <li><%= radio_button_tag "question[#{question.id}]", answer.id, false %> <%= answer.content %></li>
           <% end %>
           <li><%= radio_button_tag "question[#{question.id}]", 0, true %> I prefer not to answer this</li>
