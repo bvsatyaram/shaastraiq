@@ -24,7 +24,7 @@ class QuizzesController < ApplicationController
   def score
     end_time = Time.now
     quiz_id = params[:quiz_id].to_i
-    answers = params[:question].values.uniq.collect{|x| x.to_i}
+    answers = params[:question].values.collect{|x| x.to_i}
     unanswered_questions_count = answers.select{|x| x == 0}.size
     answers.delete(0)
     correct_answers_count = Answer.all(:conditions => {:id => answers, :correct => true}).size
